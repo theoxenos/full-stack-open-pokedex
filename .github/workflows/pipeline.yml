@@ -28,7 +28,7 @@ jobs:
         if: ${{ github.event_name == 'push' }}
         run: echo "Deploying to production..."
   tag_release:
-    needs: simple_deployment_pipeline
+    needs: [simple_deployment_pipeline]
     runs-on: ubuntu-latest
     steps:
       - name: Bump version and push tag
